@@ -48,7 +48,7 @@ public class SettingsJava  extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity.Group = group_id.getText().toString();
-                Toast post_error = Toast.makeText(getActivity(), "Se ah cambiado el grupo", Toast.LENGTH_SHORT);
+                Toast post_error = Toast.makeText(getActivity(), "Se ha cambiado el grupo", Toast.LENGTH_SHORT);
                 post_error.show();
             }
         });
@@ -61,7 +61,7 @@ public class SettingsJava  extends Fragment {
                 String code = create_group_code.getText().toString();
 
                 if(MainActivity.token == ""){
-                    Toast post_error = Toast.makeText(getActivity(), "No se ah iniciado sesion", Toast.LENGTH_SHORT);
+                    Toast post_error = Toast.makeText(getActivity(), "No se ha iniciado sesion", Toast.LENGTH_SHORT);
                     post_error.show();
                 }
                 else{
@@ -73,6 +73,7 @@ public class SettingsJava  extends Fragment {
                     else{
                         Toast post_error = Toast.makeText(getActivity(), "Grupo creado!", Toast.LENGTH_SHORT);
                         post_error.show();
+                        MainActivity.Group = code;
                     }
                 }
             }
@@ -92,7 +93,7 @@ public class SettingsJava  extends Fragment {
                     post_error.show();
                 }
                 else{
-                    Toast post_error = Toast.makeText(getActivity(), "User created", Toast.LENGTH_SHORT);
+                    Toast post_error = Toast.makeText(getActivity(), "Usuario creado", Toast.LENGTH_SHORT);
                     post_error.show();
                 }
             }

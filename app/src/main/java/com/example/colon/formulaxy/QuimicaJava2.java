@@ -43,10 +43,10 @@ public class QuimicaJava2 extends Fragment {
                 post_error.show();
             }
             else if (MainActivity.Group == ""){
-                Toast post_error = Toast.makeText(getActivity(), "No se ha encontrado grupo: "+MainActivity.Group, Toast.LENGTH_SHORT);
+                Toast post_error = Toast.makeText(getActivity(), "No se ha encontrado el grupo: "+MainActivity.Group, Toast.LENGTH_SHORT);
                 post_error.show();
             }
-            Toast post_error = Toast.makeText(getActivity(), "No se han encontrado posts", Toast.LENGTH_SHORT);
+            Toast post_error = Toast.makeText(getActivity(), "No se han encontrado los posts", Toast.LENGTH_SHORT);
             post_error.show();
         }
         String[] menuItems = new String[menu_lenght];
@@ -55,7 +55,7 @@ public class QuimicaJava2 extends Fragment {
             Post pst = new Post();
             try {
                 pst = pst.JsonToPost(posts.getJSONObject(i));
-                menuItems[i] = "[" +pst.title+"]" + "\n\n" + pst.content;
+                menuItems[i] = "|"+pst.title+"|"+"    Creado por: "+ pst.author + "\n\n" + pst.content;
                 Log.d("title", pst.title);
             } catch (JSONException e) {
                 Toast post_error = Toast.makeText(getActivity(), "Error cargando posts", Toast.LENGTH_SHORT);

@@ -28,6 +28,9 @@ public class FxyApi {
             return "Bad";
         }
         token = MainActivity.token = auth.getToken();
+        if(token == "Connection error"){
+            return "Error";
+        }
         return "Ok";
     }
 
@@ -95,6 +98,9 @@ public class FxyApi {
             return "Error";
         } catch (InterruptedException e) {
             e.printStackTrace();
+            return "Error";
+        }
+        if(send.getResp() == "User already exists!"){
             return "Error";
         }
         return "Ok";
