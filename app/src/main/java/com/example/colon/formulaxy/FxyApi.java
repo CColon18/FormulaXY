@@ -24,6 +24,9 @@ public class FxyApi {
             e.printStackTrace();
             return "Bad";
         }
+        if(auth.getToken() == "Connection error"){
+            return "Bad";
+        }
         token = MainActivity.token = auth.getToken();
         return "Ok";
     }
@@ -97,4 +100,31 @@ public class FxyApi {
         return "Ok";
     }
 
+    public String createPost(String titulo, String contenido, String Grupo, String Topic){
+        JSONObject post = new JSONObject();
+
+        try {
+            post.put("title", titulo);
+            post.put("group_id", Grupo);
+            post.put("content", contenido);
+            post.put("topic", Topic);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        SendJSON send = new SendJSON(MainActivity.token, "/posts", post);
+        try {
+            send.execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+            return "Error";
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            return "Error";
+        }
+        String msg = send.getResp();
+        if (msg != "Post created successfuly!"){
+            return msg;
+        }
+        return "Ok";
+    }
 }

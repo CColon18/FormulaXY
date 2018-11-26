@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <EditText
+        android:id="@+id/Titulo"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,21 +14,30 @@
         android:hint="Titulo del Post"/>
 
     <EditText
-        android:id="@+id/parrafoPost"
+        android:id="@+id/Contenido"
+        android:layout_width="match_parent"
+        android:layout_height="284dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:hint="Parrafo del Post" />
+
+    <Button
+        android:id="@+id/cpm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:hint="Parrafo del Post"/>
+        android:text="Create Post En Matematicas" />
 
-    <ImageButton
-        android:id="@+id/btnBack"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="25dp"
-        android:background="@drawable/oval"
-        android:src="@mipmap/back" />
+    <Button
+        android:id="@+id/cpq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Post En Quimica" />
+
+    <Button
+        android:id="@+id/cpf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Post En Fisica" />
 
 </LinearLayout>

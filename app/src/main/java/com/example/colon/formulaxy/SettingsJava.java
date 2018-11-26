@@ -70,6 +70,10 @@ public class SettingsJava  extends Fragment {
                         Toast post_error = Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT);
                         post_error.show();
                     }
+                    else{
+                        Toast post_error = Toast.makeText(getActivity(), "Grupo creado!", Toast.LENGTH_SHORT);
+                        post_error.show();
+                    }
                 }
             }
         });
